@@ -152,15 +152,6 @@ hermes keys restore $CH2_CHAIN_ID -n $CH2_REL_WALLET -m  "вставить мн�
 *********************
 
 
-
-
-# ПРОВЕРИТЬ СОСТОЯНИЕ КАНАЛОВ
-
-hermes --json query channel end $CH1_CHAIN_ID transfer $CN_NUM_1 | jq
-
-
-hermes --json query channel end $CH2_CHAIN_ID transfer $CN_NUM_2 | jq
-
 *********************************
 СОЗДАТЬ СЕРВИСНЫЙ ФАИЛ:
 
