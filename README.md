@@ -3,9 +3,9 @@
 cd $HOME
 mkdir -p $HOME/.hermes/bin
 
-verison="v0.15.0"
+''''verison="v0.15.0"
 wget "https://github.com/informalsystems/ibc-rs/releases/download/$verison/hermes-$verison-x86_64-unknown-linux-gnu.tar.gz"
-tar -C $HOME/.hermes/bin/ -vxzf hermes-$verison-x86_64-unknown-linux-gnu.tar.gz
+tar -C $HOME/.hermes/bin/ -vxzf hermes-$verison-x86_64-unknown-linux-gnu.tar.gz''''
 
 rm hermes-$verison-x86_64-unknown-linux-gnu.tar.gz
 
