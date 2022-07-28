@@ -1,7 +1,7 @@
 ## Установка HERMES relayer
-<!--
 
-cd $HOME
+
+```cd $HOME
 mkdir -p $HOME/.hermes/bin
 
 ''''verison="v0.15.0"
@@ -11,7 +11,7 @@ tar -C $HOME/.hermes/bin/ -vxzf hermes-$verison-x86_64-unknown-linux-gnu.tar.gz'
 rm hermes-$verison-x86_64-unknown-linux-gnu.tar.gz
 
 echo "export PATH=$PATH:$HOME/.hermes/bin" >> $HOME/.bash_profile
-source $HOME/.bash_profile
+source $HOME/.bash_profile```
  
 НАСТРОЙКА КОНФИГА ГЕРМЕС
 
