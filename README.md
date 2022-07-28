@@ -16,21 +16,21 @@ source $HOME/.bash_profile```
 НАСТРОЙКА КОНФИГА ГЕРМЕС
 
 Задать переменные
-MEMO="zuka"
-CH1_RPC="78.107.234.44"
-CH1_RPC_PORT="25657"
-CH1_GRPC_PORT="9192"
-CH1_CHAIN_ID="STRIDE-TESTNET-2"
-CH1_ACC_PREFIX="stride"
-CH1_DENOM="ustrd"
+MEMO="<вставить имя валидатора, для подписи транзакции релейера>"
+CH1_RPC="<ip первой сети с отрытым рпц>"
+CH1_RPC_PORT="<порт рпц первой сети>"
+CH1_GRPC_PORT="<порт gRPC первой сети>"
+CH1_CHAIN_ID="<chain id первой сети>"
+CH1_ACC_PREFIX="<префикс аккаунта первой сети>"
+CH1_DENOM="<деном первой сети>"
 CH1_REL_WALLET="CH1_REL_WALLET"
 
-CH2_RPC="78.107.234.44"
-CH2_RPC_PORT="36657"
-CH2_GRPC_PORT="9797"
-CH2_CHAIN_ID="GAIA"
-CH2_ACC_PREFIX="cosmos"
-CH2_DENOM="uatom"
+CH2_RPC="<ip второй сети с открытым RPC>"
+CH2_RPC_PORT="<RPC порт второй сети>"
+CH2_GRPC_PORT="<gRPC порт второй сети>"
+CH2_CHAIN_ID="<chain id второй сети>"
+CH2_ACC_PREFIX="<префикс аккаунта второй сети>"
+CH2_DENOM="<деном второй сети>"
 CH2_REL_WALLET="CH2_REL_WALLET"
 
 
@@ -183,7 +183,7 @@ sudo systemctl restart hermesd && journalctl -u hermesd -f
 
 отправить транзакции
 
-hermes tx raw ft-transfer   $CH2_CHAIN_ID   $CH1_CHAIN_ID   transfer   $CN_NUM_1   10000   -d $CH1_DENOM   -k $CH1_REL_WALLET   -r sei1zv62we39aqhj2g5mghznuj3k0hcg9ztqw4aax0 -n 1   -t 60   -o 100 
+hermes tx raw ft-transfer   $CH2_CHAIN_ID   $CH1_CHAIN_ID   transfer   $CN_NUM_1   10000   -d $CH1_DENOM   -k $CH1_REL_WALLET   -r <адрес кошелька первой сети> -n 1   -t 60   -o 100 
 
-hermes tx raw ft-transfer   $CH1_CHAIN_ID  $CH2_CHAIN_ID   transfer   $CN_NUM_2  10000   -d $CH2_DENOM   -k $CH2_REL_WALLET   -r tori1zv62we39aqhj2g5mghznuj3k0hcg9ztqpdmzm7  -t 60   -o 100
+hermes tx raw ft-transfer   $CH1_CHAIN_ID  $CH2_CHAIN_ID   transfer   $CN_NUM_2  10000   -d $CH2_DENOM   -k $CH2_REL_WALLET   -r <адрес кошелька второй сети>  -t 60   -o 100
 
