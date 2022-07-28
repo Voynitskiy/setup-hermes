@@ -1,4 +1,5 @@
-установка гермес
+## Установка HERMES relayer
+<!--
 
 cd $HOME
 mkdir -p $HOME/.hermes/bin
