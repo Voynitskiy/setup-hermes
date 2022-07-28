@@ -175,10 +175,3 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
 sudo systemctl restart hermesd && journalctl -u hermesd -f
-
-отправить транзакции
-
-hermes tx raw ft-transfer   $CH2_CHAIN_ID   $CH1_CHAIN_ID   transfer   $CN_NUM_1   10000   -d $CH1_DENOM   -k $CH1_REL_WALLET   -r <адрес кошелька первой сети> -n 1   -t 60   -o 100 
-
-hermes tx raw ft-transfer   $CH1_CHAIN_ID  $CH2_CHAIN_ID   transfer   $CN_NUM_2  10000   -d $CH2_DENOM   -k $CH2_REL_WALLET   -r <адрес кошелька второй сети>  -t 60   -o 100
-
