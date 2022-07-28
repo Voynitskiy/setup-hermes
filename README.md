@@ -23,6 +23,7 @@ CH1_GRPC_PORT="<порт gRPC первой сети>"
 CH1_CHAIN_ID="<chain id первой сети>"
 CH1_ACC_PREFIX="<префикс аккаунта первой сети>"
 CH1_DENOM="<деном первой сети>"
+CH1_TRUST="<период доверия, должен быть меньше чем период анбонд>"
 CH1_REL_WALLET="CH1_REL_WALLET"
 
 CH2_RPC="<ip второй сети с открытым RPC>"
@@ -31,6 +32,7 @@ CH2_GRPC_PORT="<gRPC порт второй сети>"
 CH2_CHAIN_ID="<chain id второй сети>"
 CH2_ACC_PREFIX="<префикс аккаунта второй сети>"
 CH2_DENOM="<деном второй сети>"
+CH2_TRUST="<период доверия, должен быть меньше чем период анбонд>"
 CH2_REL_WALLET="CH2_REL_WALLET"
 
 
@@ -41,9 +43,11 @@ export MEMO=${MEMO}
 export CH1_CHAIN_ID=${CH1_CHAIN_ID}
 export CH1_DENOM=${CH1_DENOM}
 export CH1_REL_WALLET=${CH1_REL_WALLET}
+export CH1_TRUST=${CH1_TRUST}
 export CH2_CHAIN_ID=${CH2_CHAIN_ID}
 export CH2_DENOM=${CH2_DENOM}
 export CH2_REL_WALLET=${CH2_REL_WALLET}
+export CH2_TRUST=${CH2_TRUST}
 " >> $HOME/.bash_profile
 
 source $HOME/.bash_profile
@@ -89,7 +93,7 @@ gas_price = { price = 0.001, denom = '$CH1_DENOM' }
 gas_adjustment = 0.1
 max_msg_num = 30
 clock_drift = '5s'
-trusting_period = '10h 29m'
+trusting_period = '$CH1_TRUST'
 trust_threshold = { numerator = '1', denominator = '3' }
 memo_prefix = '$MEMO'
 [[chains]]
@@ -109,7 +113,7 @@ max_msg_num = 30
 max_tx_size = 2097152
 clock_drift = '5s'
 max_block_time = '30s'
-trusting_period = '10h 29m'
+trusting_period = '$CH2_TRUST'
 trust_threshold = { numerator = '1', denominator = '3' }
 address_type = { derivation = 'cosmos' }" > $HOME/.hermes/config.tomlэ
 
