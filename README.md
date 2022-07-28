@@ -115,7 +115,7 @@ clock_drift = '5s'
 max_block_time = '30s'
 trusting_period = '$CH2_TRUST'
 trust_threshold = { numerator = '1', denominator = '3' }
-address_type = { derivation = 'cosmos' }" > $HOME/.hermes/config.tomlэ
+address_type = { derivation = 'cosmos' }" > $HOME/.hermes/config.toml
 
 # ПРОВЕРИТЬ КОНФИГ
 
